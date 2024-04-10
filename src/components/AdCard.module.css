@@ -1,0 +1,15 @@
+.cardContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 83vw;
+    margin: auto;
+    gap: 1rem;
+    overflow-x: scroll;
+    margin-bottom: 1rem;
+}
+.card{
+    width: 23vw;
+}
+.cardContainer::-webkit-scrollbar {
+    display: none;
+}

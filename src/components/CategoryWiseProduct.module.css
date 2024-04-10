@@ -1,0 +1,9 @@
+.categoryContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 85vw;
+    margin: auto;
+}
+.category{
+    width: 8.2rem;
+}
