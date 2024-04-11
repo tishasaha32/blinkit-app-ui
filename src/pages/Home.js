@@ -3,6 +3,7 @@ import Advertisement from "../components/Advertisement";
 import AdCard from "../components/AdCard";
 import NavBar from "../components/NavBar";
 import CategoryWiseProduct from "../components/CategoryWiseProduct";
+import DairySection from "../components/DairySection";
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <Advertisement />
       <AdCard />
       <CategoryWiseProduct />
+      <DairySection />
     </div>
   );
 }
