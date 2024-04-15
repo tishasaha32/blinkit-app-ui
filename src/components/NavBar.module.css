@@ -1,5 +1,5 @@
 .navBar{
-    border-bottom: 0.2px solid #f6f6f6;
+    border-bottom: 0.2px solid #eeeeee;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     width: 15vw;
-    border-right: 0.2px solid #f6f6f6;
+    border-right: 0.2px solid #eeeeee;
 }
 .blinkitLogo{
     width: 12rem;
@@ -39,7 +39,6 @@
 .searchIcon{
     font-size: 1.2rem;
     padding-left: 0.5rem;
-
 }
 .searchSuggestions {
     height: 100%;
