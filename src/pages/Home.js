@@ -3,7 +3,7 @@ import Advertisement from "../components/Advertisement";
 import AdCard from "../components/AdCard";
 import NavBar from "../common/NavBar";
 import CategoryWiseProduct from "../components/CategoryWiseProduct";
-import ProductCards from "../components/ProductCards.js";
+import ProductCards from "../common/ProductCards.js";
 
 function Home() {
   return (

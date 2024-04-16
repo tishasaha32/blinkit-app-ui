@@ -11,12 +11,15 @@ import milkBread from "../assets/milkBread.png";
 import milk from "../assets/milk.png";
 import paneer from "../assets/paneer.png";
 import pasteurizedMilk from "../assets/pasteurizedMilk.png";
+import lays from "../assets/lays.png";
+import soyaSticks from "../assets/soyaStick.png";
+import pomegranateJuice from "../assets/pomegranateJuice.png";
 
-import styles from "./ProductCards.module.css";
+import styles from "./ProductPageProductCards.module.css";
 
 import { MdOutlineTimer } from "react-icons/md";
 
-function ProductCards() {
+function ProductPageProductCards() {
   const products = [
     {
       id: 1,
@@ -114,14 +117,37 @@ function ProductCards() {
       price: "₹25",
       time: "13 MINS",
     },
+    {
+      id: 13,
+      image: lays,
+      title: "Lays",
+      weight: "200g",
+      price: "₹15",
+      time: "13 MINS",
+    },
+    {
+      id: 14,
+      image: soyaSticks,
+      title: "Haldiram's Soya Sticks",
+      weight: "200g",
+      price: "₹20",
+      time: "13 MINS",
+    },
+    {
+      id: 15,
+      image: pomegranateJuice,
+      title: "Tropicana Pomegranate Juice",
+      weight: "200g",
+      price: "₹25",
+      time: "13 MINS",
+    },
   ];
   return (
     <div>
-      <h2 style={{ marginLeft: "8.2rem" }}>Dairy, Bread & Eggs</h2>
-      <div className={styles.dairyProductsContainer}>
+      <div className={styles.productsContainer}>
         {products.map((product) => (
-          <div className={styles.dairyProductContainer}>
-            <img src={product.image} className={styles.dairyProduct} />
+          <div className={styles.productContainer}>
+            <img src={product.image} className={styles.product} />
             <div className={styles.timerCountainer}>
               <MdOutlineTimer className={styles.timerIcon} />
               <p className={styles.time}>{product.time}</p>
@@ -139,4 +165,4 @@ function ProductCards() {
   );
 }
 
-export default ProductCards;
+export default ProductPageProductCards;

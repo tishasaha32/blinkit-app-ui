@@ -1,51 +1,50 @@
-.dairyProductsContainer{
-    display: flex;
-    align-items: center;
-    overflow-x: scroll;
-    width: 82vw;
-    margin: auto;
-    gap: 2rem;
-    margin-bottom: 2.5rem;
+.productsContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+    height: 575px;
+    overflow-y: scroll;
+    background-color: #f4f6fb;
+    padding: 0.5rem;
 }
-.dairyProductsContainer::-webkit-scrollbar {
+.productsContainer::-webkit-scrollbar {
     display: none;
 }
-.dairyProductContainer{
-    border: 1px solid #e8e8e8;
-    border-radius: 10px;
+.productContainer{
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
     padding: 1rem;
+    background-color: white;
 }
-.dairyProduct{
-    margin: auto;
-    width: 10rem;
-    height: auto;
-}
-
-.timerCountainer{
+.product{
     display: flex;
-    align-items: center;
-    width: 4.3rem;
-    height: 1.5rem;
+    width: 8rem;
+    height: 8rem;
+    margin: auto;
+}
+.timerCountainer{
+    width: 4rem;
+    display: flex;
     justify-content: space-evenly;
-    border-radius: 10px;
-    background-color: #ebf4fe;
+    align-items: center;
+    height: 0.5rem;
 }
 .timerIcon{
     font-size: .8rem;
 }
 .time{
     font-size: .6rem;
+    font-weight: bold;
 }
-
 .productTitle{
-    height: 2.2rem;
-    margin: 0.5rem;
+    height: 1.5rem;
+    margin-left: 0.5rem;
     font-size: 14px;
     font-weight: bold;
     color: #221f1f;
 }
 .productWeight{
-    margin: 0.5rem;
+    margin-left: 0.5rem;
     font-size: .7rem;
     color: #7b7b7b;
 }
@@ -54,6 +53,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 1rem;
     margin: 0px 0.5rem;
 }
 .productPrice{

@@ -1,0 +1,29 @@
+.sideBarAndProductsContainer{
+    display: flex;
+    width: 90vw;
+    margin: auto;
+    margin-top: 2px;
+}
+.subCategoriesContainer{
+    height: 590px;
+    width: 18vw;
+    overflow-y: scroll;
+    background-color: white;
+}
+.subCategoriesContainer::-webkit-scrollbar {
+    display: none;
+}
+.subCategoryContainer{
+    border: 1px solid #eeeeee;
+    padding-left: 20px;
+}
+.subCategory{
+    cursor: pointer;
+}
+.subCategoryContainer:hover{
+    background-color: #ebffef;
+}
+.selectedCategory {
+    background-color: #ebffef;
+    font-weight: 600;
+}  

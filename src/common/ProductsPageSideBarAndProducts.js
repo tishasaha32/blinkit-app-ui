@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ProductsPageSideBarAndProducts.module.css";
-import ProductCards from "./ProductCards.js";
+import ProductPageProductCards from "./ProductPageProductCards.js";
 
 function ProductsPageSideBarAndProducts() {
   const subCategories = [
@@ -24,24 +24,33 @@ function ProductsPageSideBarAndProducts() {
     "Fresh Fruits",
     "Fresh Vegetables",
   ];
+
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
   return (
     <div className={styles.sideBarAndProductsContainer}>
       <div className={styles.subCategoriesContainer}>
-        {subCategories.map((subCategory) => {
+        {subCategories.map((subCategory, index) => {
           return (
-            <div className={styles.subCategoryContainer}>
+            <div
+              key={index}
+              className={`${styles.subCategoryContainer} ${
+                selectedCategory === subCategory ? styles.selectedCategory : ""
+              }`}
+              onClick={() => handleCategoryClick(subCategory)}
+            >
               <p className={styles.subCategory}>{subCategory}</p>
             </div>
           );
         })}
       </div>
-      {/* <div className={styles.products}>
-        <ProductCards />
-        <ProductCards />
-        <ProductCards />
-        <ProductCards />
-        <ProductCards />
-      </div> */}
+      <div>
+        <ProductPageProductCards />
+      </div>
     </div>
   );
 }
