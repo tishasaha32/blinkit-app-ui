@@ -1,9 +1,9 @@
 import React from "react";
 import Advertisement from "../components/Advertisement";
 import AdCard from "../components/AdCard";
-import NavBar from "../components/NavBar";
+import NavBar from "../common/NavBar";
 import CategoryWiseProduct from "../components/CategoryWiseProduct";
-import DairySection from "../components/DairySection";
+import ProductCards from "../components/ProductCards.js";
 
 function Home() {
   return (
@@ -12,7 +12,7 @@ function Home() {
       <Advertisement />
       <AdCard />
       <CategoryWiseProduct />
-      <DairySection />
+      <ProductCards />
     </div>
   );
 }

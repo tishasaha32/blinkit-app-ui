@@ -1,12 +1,16 @@
 import React from "react";
-import NavBar from "../components/NavBar";
+import NavBar from "../common/NavBar";
 import ProductPageCategoryBar from "../components/ProductPageCategoryBar";
+import ProductsPageSideBarAndProducts from "../components/ProductsPageSideBarAndProducts";
 
 function Products() {
   return (
     <div>
-      <NavBar />
-      <ProductPageCategoryBar />
+      <div>
+        <NavBar />
+        <ProductPageCategoryBar />
+      </div>
+      <ProductsPageSideBarAndProducts />
     </div>
   );
 }

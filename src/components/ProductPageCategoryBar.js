@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./ProductPageCategoryBar.module.css";
-import { RiArrowDropDownLine } from "react-icons/ri";
 
 function ProductPageCategoryBar() {
   return (
@@ -27,21 +26,6 @@ function ProductPageCategoryBar() {
         <div className={styles.categoryContainer}>
           <p className={styles.category}>Bakery & Biscuits</p>
         </div>
-        <div className={styles.moreOptions}>
-          <p className={styles.category}>More</p>
-          <RiArrowDropDownLine className={styles.dropDownArrow} />
-        </div>
-        {/* <p className={styles.options}>Sweet Tooth</p>
-        <p className={styles.options}>Atta, Rice, Dal</p>
-        <p className={styles.options}>Dry Fruits, Masala & Oil</p>
-        <p className={styles.options}>Sauces & Spreads</p>
-        <p className={styles.options}>Chicken, Meat & Fish</p>
-        <p className={styles.options}>Paan Corner</p>
-        <p className={styles.options}>Organic & Premium</p>
-        <p className={styles.options}>Baby Care</p>
-        <p className={styles.options}>Pharma & Wellness</p>
-        <p className={styles.options}>Cleaning and Essentials</p>
-        <p className={styles.options}>Home and Office</p> */}
       </div>
     </div>
   );

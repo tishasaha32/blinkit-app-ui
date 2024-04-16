@@ -12,11 +12,11 @@ import milk from "../assets/milk.png";
 import paneer from "../assets/paneer.png";
 import pasteurizedMilk from "../assets/pasteurizedMilk.png";
 
-import styles from "./DairySection.module.css";
+import styles from "./ProductCards.module.css";
 
 import { MdOutlineTimer } from "react-icons/md";
 
-function DairySection() {
+function ProductCards() {
   const products = [
     {
       id: 1,
@@ -139,4 +139,4 @@ function DairySection() {
   );
 }
 
-export default DairySection;
+export default ProductCards;

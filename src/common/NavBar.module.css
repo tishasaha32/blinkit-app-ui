@@ -3,13 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding-top: 1rem;
 }
 .logoContainer{
     display: flex;
     justify-content: center;
     width: 15vw;
-    border-right: 0.2px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
 }
 .blinkitLogo{
     width: 12rem;
@@ -48,11 +48,14 @@
 
 .suggestion{
     position: absolute;
+    top: 100%;
+    left: 0px;
     animation: 15000ms ease 0s infinite normal forwards running cbWWSx;
     font-weight: 400;
     font-size: 14px;
-    /* height: 20px;    */
+    line-height: 18px;
     color: rgb(153, 153, 153);
+    margin-top: 14px;
 }
 
 .text1{

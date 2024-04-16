@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import blinkitLogo from "../assets/blinkit_logo.png";
 import styles from "./NavBar.module.css";
-import Modal from "./Modal.js";
+import Modal from "../components/Modal.js";
 
 import { CiSearch } from "react-icons/ci";
 import { AiOutlineShoppingCart } from "react-icons/ai";
