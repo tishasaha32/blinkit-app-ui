@@ -1,8 +1,8 @@
 import React from "react";
-import Advertisement from "../components/Advertisement";
-import AdCard from "../components/AdCard";
-import NavBar from "../common/NavBar";
-import CategoryWiseProduct from "../components/CategoryWiseProduct";
+import Advertisement from "../components/Advertisement.js";
+import AdCard from "../components/AdCard.js";
+import NavBar from "../common/NavBar.js";
+import CategoryWiseProduct from "../components/CategoryWiseProduct.js";
 import ProductCards from "../common/ProductCards.js";
 
 function Home() {

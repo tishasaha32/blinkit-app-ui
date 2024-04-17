@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./ProductsPageSideBarAndProducts.module.css";
-import ProductPageProductCards from "./ProductPageProductCards.js";
+import ProductCards from "./ProductCards.js";
 
 function ProductsPageSideBarAndProducts() {
   const subCategories = [
@@ -15,14 +15,10 @@ function ProductsPageSideBarAndProducts() {
     "Flowers & Leaves",
     "Fresh Fruits",
     "Fresh Vegetables",
-    "Melons",
-    "Oranges",
-    "OtherFruits",
-    "OtherVegetables",
-    "Seasonal",
-    "Flowers & Leaves",
-    "Fresh Fruits",
-    "Fresh Vegetables",
+    "Chips",
+    "Chocolates",
+    "Ice Creams",
+    "Grapes",
   ];
 
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -49,7 +45,7 @@ function ProductsPageSideBarAndProducts() {
         })}
       </div>
       <div>
-        <ProductPageProductCards />
+        <ProductCards inProductPage={true} />
       </div>
     </div>
   );

@@ -1,0 +1,74 @@
+.productContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.productImageContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #f5f5f5;
+    border-bottom: 1px solid #f5f5f5;
+}
+.productDetails{
+    width: 40vw;
+    padding: 2rem;
+    overflow-x: hidden;
+}
+.productImage{
+    width: 35rem;
+    height: 35rem;
+}
+
+
+.productPriceAndAddButtonContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    height: 5rem;
+}
+.productPrice{
+    font-weight: 500;
+}
+.addButton{
+    border: 1px solid #4a9533;
+    color: #4a9533;
+    font-weight: 600;
+    padding: 5px 1rem;
+    border-radius: 8px;
+}
+.taxText{
+    height: 1px;
+}
+
+.timerCountainer{
+    display: flex;
+    align-items: center;
+    width: 4.5rem;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+.timerIcon{
+    font-size: .8rem;
+}
+.time{
+    font-size: .6rem;
+    font-weight: bold;
+}
+.productWeight{
+    border-top: 1px solid #e8e8e8;
+    height: 0.2rem;
+    font-size: 1rem;
+    color: #7b7b7b;
+}
+.whyShopContainer{
+    width: 40vw;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+.whyShopImage{
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: auto;
+}
