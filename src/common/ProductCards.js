@@ -66,7 +66,7 @@ function ProductCards({ inProductPage, products }) {
                   : styles.productPriceAndAddButtonContainer
               }
             >
-              <p className={styles.productPrice}>{product.price}</p>
+              <p className={styles.productPrice}>₹ {product.price}</p>
               {product.qty === 0 && (
                 <button
                   onClick={() => handleQtyIncrease(product.id)}
@@ -76,7 +76,7 @@ function ProductCards({ inProductPage, products }) {
                 </button>
               )}
               {product.qty > 0 && (
-                <div className={styles.productCountButton}>
+                <button className={styles.productCountButton}>
                   <p
                     onClick={() => handleQtyDecrease(product.id)}
                     className={styles.decreaseProductCount}
@@ -90,7 +90,7 @@ function ProductCards({ inProductPage, products }) {
                   >
                     +
                   </p>
-                </div>
+                </button>
               )}
             </div>
           </div>

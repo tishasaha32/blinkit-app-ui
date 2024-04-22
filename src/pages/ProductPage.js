@@ -14,11 +14,12 @@ import { CartContext } from "../context/cartContext";
 
 function Product() {
   const { id } = useParams();
-  const { setProductId, product } = useContext(ProductsContext);
+  const { setProductId, product, productId } = useContext(ProductsContext);
   const { handleQtyDecrease, handleQtyIncrease } = useContext(CartContext);
   useEffect(() => {
     setProductId(id);
-  }, []);
+    // console.log(product);
+  }, [productId]);
 
   return (
     <div>
@@ -29,7 +30,7 @@ function Product() {
         </div>
         <div className={styles.productDetails}>
           <h3> {product?.title}</h3>
-          <div className={styles.timerCountainer}>
+          <div className={styles.timerContainer}>
             <MdOutlineTimer className={styles.timerIcon} />
             <p className={styles.time}>{product?.time}</p>
           </div>
@@ -39,10 +40,12 @@ function Product() {
               <p className={styles.productPrice}>MRP {product?.price}</p>
               <p className={styles.taxText}>(inclusive of all taxes)</p>
             </div>
-            <p className={styles.productPrice}>{product.price}</p>
             {product.qty === 0 && (
               <button
-                onClick={() => handleQtyIncrease(product.id)}
+                onClick={() => {
+                  console.log("button clicked");
+                  handleQtyIncrease(product.id);
+                }}
                 className={styles.addButton}
               >
                 ADD
@@ -66,7 +69,7 @@ function Product() {
               </div>
             )}
           </div>
-          <h4> Why shop from blinkit? </h4>
+          <h4 style={{ margin: "2rem 0px" }}> Why shop from blinkit? </h4>
           <div className={styles.whyShopContainer}>
             <img src={deliveryBoy} className={styles.whyShopImage} />
             <div>

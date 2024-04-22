@@ -9,23 +9,46 @@
     border-right: 1px solid #f5f5f5;
     border-bottom: 1px solid #f5f5f5;
 }
-.productDetails{
-    width: 40vw;
-    padding: 2rem;
-    overflow-x: hidden;
-}
 .productImage{
     width: 35rem;
     height: 35rem;
 }
 
+.productDetails{
+    width: 40vw;
+    padding: 2rem;
+    overflow-x: hidden;
+}
+.timerContainer{
+    display: flex;
+    align-items: center;
+    width: 4.5rem;
+    height: 2rem;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    margin: 10px 0px;
+}
+.timerIcon{
+    font-size: 1rem;
+}
+.time{
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.productWeight{
+    padding: 1rem 0px;
+    border-top: 1px solid #e8e8e8;
+    font-size: 1rem;
+    color: #7b7b7b;
+}
 
 .productPriceAndAddButtonContainer{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 25vw;
-    height: 5rem;
 }
 .productPrice{
     font-weight: 500;
@@ -37,35 +60,27 @@
     padding: 5px 1rem;
     border-radius: 8px;
 }
-.taxText{
-    height: 1px;
+.productCountButton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4a9533; 
+    color: white;
+    border-radius: 8px; 
+    border: none;
+}
+.decreaseProductCount, .increaseProductCount{
+    cursor: pointer;  
+    margin: 6px 10px;
 }
 
-.timerCountainer{
-    display: flex;
-    align-items: center;
-    width: 4.5rem;
-    justify-content: space-evenly;
-    border-radius: 10px;
-    background-color: #f5f5f5;
-}
-.timerIcon{
-    font-size: .8rem;
-}
-.time{
-    font-size: .6rem;
-    font-weight: bold;
-}
-.productWeight{
-    border-top: 1px solid #e8e8e8;
-    height: 0.2rem;
-    font-size: 1rem;
-    color: #7b7b7b;
-}
+
 .whyShopContainer{
     width: 40vw;
     display: grid;
     grid-template-columns: 1fr 5fr;
+    align-items: center;
+    margin: 1rem 0px;
 }
 .whyShopImage{
     width: 3.5rem;

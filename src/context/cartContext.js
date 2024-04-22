@@ -1,28 +1,38 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { ProductsContext } from "./productsContext";
 
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
-  // Example to ensure that ProductsContext has values
-  const { products } = useContext(ProductsContext);
-  const [cartProducts, setCartProducts] = useState(products);
+  const { products, setProducts, setProduct } = useContext(ProductsContext);
+  const [cartProducts, setCartProducts] = useState([]);
+
+  const updateCart = (newProducts) => {
+    const addedtoCartProducts = newProducts.filter(
+      (product) => product.qty > 0
+    );
+    setCartProducts(addedtoCartProducts);
+  };
 
   const handleQtyIncrease = (id) => {
     const newProducts = [...products];
     const product = newProducts.find((product) => product.id === id);
     if (product) {
       product.qty = product.qty + 1;
-      setCartProducts(newProducts);
+      setProducts(newProducts);
+      setProduct(product);
+      updateCart(newProducts);
     }
   };
 
   const handleQtyDecrease = (id) => {
-    const newProducts = [...cartProducts];
+    const newProducts = [...products];
     const product = newProducts.find((product) => product.id === id);
     if (product) {
       product.qty = product.qty - 1;
-      setCartProducts(newProducts);
+      setProducts(newProducts);
+      setProduct(product);
+      updateCart(newProducts);
     }
   };
 

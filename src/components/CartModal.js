@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./CartModal.module.css";
 import { RxCross2 } from "react-icons/rx";
 import { MdOutlineTimer } from "react-icons/md";
@@ -6,8 +6,23 @@ import { TiDocumentText } from "react-icons/ti";
 import { MdOutlinePedalBike } from "react-icons/md";
 import { RiRedPacketFill } from "react-icons/ri";
 import feedingIndiaIcon from "../assets/feedingIndiaIcon.png";
+import { CartContext } from "../context/cartContext";
 
 function CartModal({ isOpen, onClose }) {
+  const { cartProducts } = useContext(CartContext);
+  const deliveryCharge = 30;
+  const handlingCharge = 20;
+  let total = 0,
+    qty = 0;
+  const cartTotal = () => {
+    cartProducts.forEach((product) => {
+      console.log(product.qty);
+      qty = qty + product.qty;
+      total += product.price * product.qty;
+    });
+  };
+  cartTotal();
+
   return (
     <div className={styles.cartBackdrop} onClick={onClose}>
       <div
@@ -16,16 +31,29 @@ function CartModal({ isOpen, onClose }) {
       >
         <div className={styles.cartHeader}>
           <h3>My Cart</h3>
-          <RxCross2 onClick={onClose} />
+          <RxCross2 onClick={onClose} className={styles.crossIcon} />
         </div>
 
         <div className={styles.deliveryDetailsAndProductContainer}>
           <div className={styles.deliveryTimeAndQuantity}>
             <MdOutlineTimer className={styles.timerIcon} />
             <div>
-              <p className={styles.deliveryTime}>Delivery in </p>
-              <p className={styles.quantity}>Shipment of 2 items</p>
+              <p className={styles.deliveryTime}>Delivery in 13 MINS</p>
+              <p className={styles.quantity}>Shipment of {qty} items</p>
             </div>
+          </div>
+          <div>
+            {cartProducts.map((product) => {
+              return (
+                <div className={styles.productContainer} key={product.id}>
+                  <img src={product.image} className={styles.productImage} />
+                  <div>
+                    <p>{product.title}</p>
+                    <p>₹{product.price}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -37,7 +65,7 @@ function CartModal({ isOpen, onClose }) {
               <p> Item Total</p>
             </div>
             <div className={styles.productPriceContainer}>
-              <p>130</p>
+              <p>{total}</p>
             </div>
           </div>
 
@@ -47,7 +75,7 @@ function CartModal({ isOpen, onClose }) {
               <p> Delivery Charges</p>
             </div>
             <div className={styles.productPriceContainer}>
-              <p>130</p>
+              <p>{deliveryCharge}</p>
             </div>
           </div>
 
@@ -57,22 +85,20 @@ function CartModal({ isOpen, onClose }) {
               <p> Handling Charges</p>
             </div>
             <div className={styles.productPriceContainer}>
-              <p>130</p>
+              <p>{handlingCharge}</p>
             </div>
           </div>
 
           <div className={styles.grandTotalContainer}>
             <p>Grand Total</p>
-            <p>130</p>
+            <p>{total + deliveryCharge + handlingCharge}</p>
           </div>
         </div>
 
         <div className={styles.feedingIndiaContainer}>
           <img src={feedingIndiaIcon} className={styles.feedingIndiaIcon} />
           <div className={styles.feedingIndiaText}>
-            <p style={{ fontWeight: "bold", height: "0.5rem" }}>
-              Feeding India donation
-            </p>
+            <p style={{ fontWeight: "bold" }}>Feeding India donation</p>
             <p style={{ fontSize: "0.8rem", color: "#7b7b7b" }}>
               Working towards a malnutrition free India.
             </p>
@@ -98,7 +124,7 @@ function CartModal({ isOpen, onClose }) {
         </div>
 
         <div className={styles.cancellationContainer}>
-          <p style={{ fontWeight: "bold", height: "0.5rem" }}>
+          <p style={{ fontWeight: "bold", paddingBottom: "10px" }}>
             Cancellation Policy
           </p>
           <p style={{ fontSize: "0.8rem", color: "#7b7b7b" }}>

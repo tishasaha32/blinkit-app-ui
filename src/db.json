@@ -5,7 +5,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/bread.png",
       "title": "Britannia 100% Whole Wheat Bread",
       "weight": "200g",
-      "price": "₹55",
+      "price": 55,
       "time": "13 MIN",
       "qty": 0
     },
@@ -14,7 +14,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/butter.png",
       "title": "Amul Salted Butter",
       "weight": "200g",
-      "price": "₹285",
+      "price": 285,
       "time": "13 MINS",
       "qty": 0
     },
@@ -23,7 +23,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/cheese.png",
       "title": "Amul Cheese Slices",
       "weight": "200g",
-      "price": "₹285",
+      "price": 285,
       "time": "13 MINS",
       "qty": 0
     },
@@ -32,7 +32,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/curd.png",
       "title": "Nandini Curd",
       "weight": "200g",
-      "price": "₹26",
+      "price": 26,
       "time": "13 MINS",
       "qty": 0
     },
@@ -41,7 +41,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/milk.png",
       "title": "Nandini Milk",
       "weight": "200g",
-      "price": "₹22",
+      "price": 22,
       "time": "13 MINS",
       "qty": 0
     },
@@ -50,7 +50,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/eggs.png",
       "title": "Jaya White Eggs",
       "weight": "200g",
-      "price": "₹40",
+      "price": 40,
       "time": "13 MINS",
       "qty": 0
     },
@@ -59,7 +59,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/milkBread.png",
       "title": "Britannia 100% Whole Milk Bread",
       "weight": "200g",
-      "price": "₹285",
+      "price": 285,
       "time": "13 MINS",
       "qty": 0
     },
@@ -68,7 +68,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/brownBread.png",
       "title": "Britannia 100% Whole Brown Bread",
       "weight": "200g",
-      "price": "₹85",
+      "price": 85,
       "time": "13 MINS",
       "qty": 0
     },
@@ -77,7 +77,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/cheeseCubes.png",
       "title": "Amul Cheese Cubes",
       "weight": "200g",
-      "price": "₹285",
+      "price": 285,
       "time": "13 MINS",
       "qty": 0
     },
@@ -86,7 +86,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/dicedCheese.png",
       "title": "Amul Diced Cheese Cubes",
       "weight": "200g",
-      "price": "₹285",
+      "price": 285,
       "time": "13 MINS",
       "qty": 0
     },
@@ -95,7 +95,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/paneer.png",
       "title": "Milky Mist paneer",
       "weight": "200g",
-      "price": "₹285",
+      "price": 285,
       "time": "13 MINS",
       "qty": 0
     },
@@ -104,7 +104,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/pasteurizedMilk.png",
       "title": "Nandini Pasteurized Milk",
       "weight": "200g",
-      "price": "₹285",
+      "price": 285,
       "time": "13 MINS",
       "qty": 0
     },
@@ -113,7 +113,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/lays.png",
       "title": "Lays",
       "weight": "200g",
-      "price": "₹285",
+      "price": 285,
       "time": "13 MINS",
       "qty": 0
     },
@@ -122,7 +122,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/soyaStick.png",
       "title": "Haldiram's Soya Sticks",
       "weight": "200g",
-      "price": "₹20",
+      "price": 20,
       "time": "13 MINS",
       "qty": 0
     },
@@ -131,7 +131,7 @@
       "image": "http://127.0.0.1:5500/frontend/src/assets/pomegranateJuice.png",
       "title": "Tropicana Pomegranate Juice",
       "weight": "200g",
-      "price": "₹25",
+      "price": 25,
       "time": "13 MINS",
       "qty": 0
     }
