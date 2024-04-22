@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./ProductsPageSideBarAndProducts.module.css";
 import ProductCards from "./ProductCards.js";
 
-function ProductsPageSideBarAndProducts() {
+function ProductsPageSideBarAndProducts({ products }) {
   const subCategories = [
     "Vegetables",
     "Fruits",
@@ -45,7 +45,7 @@ function ProductsPageSideBarAndProducts() {
         })}
       </div>
       <div>
-        <ProductCards inProductPage={true} />
+        <ProductCards inProductPage={true} products={products} />
       </div>
     </div>
   );

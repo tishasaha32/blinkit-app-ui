@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./ProductCards.module.css";
-import axios from "axios";
 import { MdOutlineTimer } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { ProductsContext } from "../context/productsContext";
+import { CartContext } from "../context/cartContext";
 
-function ProductCards({ inProductPage }) {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    axios.get("http://localhost:8000/products").then((response) => {
-      setProducts(response.data);
-    }, []);
-  });
+function ProductCards({ inProductPage, products }) {
+  const { handleQtyDecrease, handleQtyIncrease } = useContext(CartContext);
   return (
     <div>
       {!inProductPage && (
@@ -23,18 +19,18 @@ function ProductCards({ inProductPage }) {
             : styles.productsContainer
         }
       >
-        {products.map((product) => (
-          <Link
-            to={`/products/${product.id}`}
-            style={{ textDecoration: "none", color: "inherit" }}
+        {products?.map((product) => (
+          <div
+            key={product.id}
+            className={
+              inProductPage
+                ? styles.productContainerProductPage
+                : styles.productContainer
+            }
           >
-            <div
-              key={product.id}
-              className={
-                inProductPage
-                  ? styles.productContainerProductPage
-                  : styles.productContainer
-              }
+            <Link
+              to={`/products/${product.id}`}
+              style={{ textDecoration: "none", color: "inherit" }}
             >
               <img
                 src={product.image}
@@ -62,18 +58,42 @@ function ProductCards({ inProductPage }) {
                 {product.title}
               </p>
               <p className={styles.productWeight}>{product.weight}</p>
-              <div
-                className={
-                  inProductPage
-                    ? styles.productPriceAndAddButtonContainerProductPage
-                    : styles.productPriceAndAddButtonContainer
-                }
-              >
-                <p className={styles.productPrice}>{product.price}</p>
-                <button className={styles.addButton}> ADD </button>
-              </div>
+            </Link>
+            <div
+              className={
+                inProductPage
+                  ? styles.productPriceAndAddButtonContainerProductPage
+                  : styles.productPriceAndAddButtonContainer
+              }
+            >
+              <p className={styles.productPrice}>{product.price}</p>
+              {product.qty === 0 && (
+                <button
+                  onClick={() => handleQtyIncrease(product.id)}
+                  className={styles.addButton}
+                >
+                  ADD
+                </button>
+              )}
+              {product.qty > 0 && (
+                <div className={styles.productCountButton}>
+                  <p
+                    onClick={() => handleQtyDecrease(product.id)}
+                    className={styles.decreaseProductCount}
+                  >
+                    -
+                  </p>
+                  <p className={styles.productCount}>{product.qty}</p>
+                  <p
+                    onClick={() => handleQtyIncrease(product.id)}
+                    className={styles.increaseProductCount}
+                  >
+                    +
+                  </p>
+                </div>
+              )}
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>

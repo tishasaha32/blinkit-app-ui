@@ -1,14 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
 import NavBar from "../common/NavBar";
 import ProductPageCategoryBar from "../common/ProductPageCategoryBar";
 import ProductsPageSideBarAndProducts from "../common/ProductsPageSideBarAndProducts";
+import { ProductsContext } from "../context/productsContext";
 
 function Products() {
+  const { products } = useContext(ProductsContext);
   return (
     <div>
       <NavBar />
       <ProductPageCategoryBar />
-      <ProductsPageSideBarAndProducts />
+      <ProductsPageSideBarAndProducts products={products} />
     </div>
   );
 }

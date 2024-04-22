@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import NavBar from "../common/NavBar";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 
 import deliveryBoy from "../assets/deliveryBoy.png";
 import bestPrices from "../assets/bestPrices.png";
@@ -9,22 +8,18 @@ import wideVariety from "../assets/wideVariety.png";
 
 import styles from "./ProductPage.module.css";
 import { MdOutlineTimer } from "react-icons/md";
+import { ProductsContext } from "../context/productsContext";
+import { useParams } from "react-router-dom";
+import { CartContext } from "../context/cartContext";
 
 function Product() {
   const { id } = useParams();
-  const [product, setProduct] = useState();
+  const { setProductId, product } = useContext(ProductsContext);
+  const { handleQtyDecrease, handleQtyIncrease } = useContext(CartContext);
   useEffect(() => {
-    console.log(id);
-    axios
-      .get(`http://localhost:8000/products/${id}`)
-      .then((response) => {
-        setProduct(response.data);
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  }, [id]);
+    setProductId(id);
+  }, []);
+
   return (
     <div>
       <NavBar />
@@ -44,7 +39,32 @@ function Product() {
               <p className={styles.productPrice}>MRP {product?.price}</p>
               <p className={styles.taxText}>(inclusive of all taxes)</p>
             </div>
-            <button className={styles.addButton}> ADD </button>
+            <p className={styles.productPrice}>{product.price}</p>
+            {product.qty === 0 && (
+              <button
+                onClick={() => handleQtyIncrease(product.id)}
+                className={styles.addButton}
+              >
+                ADD
+              </button>
+            )}
+            {product.qty > 0 && (
+              <div className={styles.productCountButton}>
+                <p
+                  onClick={() => handleQtyDecrease(product.id)}
+                  className={styles.decreaseProductCount}
+                >
+                  -
+                </p>
+                <p className={styles.productCount}>{product.qty}</p>
+                <p
+                  onClick={() => handleQtyIncrease(product.id)}
+                  className={styles.increaseProductCount}
+                >
+                  +
+                </p>
+              </div>
+            )}
           </div>
           <h4> Why shop from blinkit? </h4>
           <div className={styles.whyShopContainer}>

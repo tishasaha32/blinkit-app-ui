@@ -1,0 +1,17 @@
+.logoContainer{
+    display: flex;
+    justify-content: center;
+    width: 15vw;
+    border-right: 1px solid #eeeeee;
+}
+
+.logoContainerInCheckoutPage{
+    display: flex;
+    justify-content: center;
+    width: 10vw;
+    padding-left: 10px;
+}
+.blinkitLogo{
+    width: 12rem;
+}
+

@@ -1,0 +1,135 @@
+.cartBackdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+.cartContainer{
+    position: absolute;
+    right: 0%;
+    width: 25%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #f5f7fd;
+}
+.cartContainer::-webkit-scrollbar {
+    display: none;
+}
+.cartHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 0px 20px;
+    border-radius: 10px;
+}
+.deliveryDetailsAndProductContainer{
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 10px 10px;
+    padding: 5px 10px;
+}
+.deliveryTimeAndQuantity{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.timerIcon{
+    font-size: 2rem;
+    padding: 10px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+}
+.deliveryTime{
+    font-weight: 500;
+    height: 0.5rem;
+}
+.quantity{
+    font-size: 0.9rem;
+    color: #7b7b7b;
+}
+
+
+.billDetailsContainer{
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 10px;
+}
+.billDetailsText{
+    font-weight: bold;
+}
+.billDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 1.5rem;
+}
+.itemTotalContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.billDetails p{
+    font-size: 0.85rem;
+}
+
+.grandTotalContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.feedingIndiaContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 10px;
+}
+.feedingIndiaIcon{
+    width: 3rem;
+    height: 3rem;
+    padding-right: 1rem;
+}
+.feedingIndiaText{
+    flex: 4;
+}
+.checkBoxContainer{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.tipContainer{
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 10px;
+}
+.tips{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tip{
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    padding: 0.9em;
+    color: #666666;
+}
+
+.cancellationContainer{
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 10px;
+}

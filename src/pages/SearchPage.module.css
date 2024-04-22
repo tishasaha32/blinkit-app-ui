@@ -1,0 +1,29 @@
+.searchPageContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    padding: 0.8rem 0rem;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.searchInputContainer{
+    position: relative;
+}
+.searchIcon{
+    position: absolute;
+    top: 28%;
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+}
+.searchInput{
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 8px;;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 8px;
+    width: 65vw;
+    padding: 1rem;
+    padding-left: 2rem;
+}
+.searchInput:focus{
+    outline: none;
+}

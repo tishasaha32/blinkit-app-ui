@@ -1,18 +1,9 @@
 .navBar{
+    padding: 1rem 0rem;
     border-bottom: 0.2px solid #eeeeee;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 1rem;
-}
-.logoContainer{
-    display: flex;
-    justify-content: center;
-    width: 15vw;
-    border-right: 1px solid #eeeeee;
-}
-.blinkitLogo{
-    width: 12rem;
 }
 
 .locationContainer{
@@ -113,21 +104,3 @@
     justify-content: center;
 }
 
-.myCartButtonContainer {
-    width: 10vw;
- }
-.myCartIcon {
-    font-size: 1.2rem;
-} 
-.myCartButton {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 0.5rem;
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.8rem; 
-    background-color: #0c831f;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-}
