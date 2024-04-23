@@ -13,7 +13,7 @@ const CartContextProvider = ({ children }) => {
       .patch(`http://localhost:8000/products/${id}`, {
         qty: updatedProduct.qty,
       })
-      .then((response) => {
+      .then(() => {
         console.log("Product updated successfully");
       })
       .catch((error) => {
@@ -24,7 +24,24 @@ const CartContextProvider = ({ children }) => {
   const updateCart = (newProducts) => {
     const newCartProducts = newProducts.filter((product) => product.qty > 0);
     setCartProducts(newCartProducts);
+    // axios
+    //   .post("http://localhost:8000/cartProducts", newCartProducts)
+    //   .then(() => {})
+    //   .catch((error) => {
+    //     console.error("Error updating cart:", error);
+    //   });
   };
+
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:8000/cartProducts")
+  //     .then((response) => {
+  //       setCartProducts(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching cart products:", error);
+  //     });
+  // }, [cartProducts]);
 
   const handleQtyIncrease = (id) => {
     const newProducts = [...products];

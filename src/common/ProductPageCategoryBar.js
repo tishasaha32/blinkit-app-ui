@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ProductPageCategoryBar.module.css";
+import { Link } from "react-router-dom";
 
 function ProductPageCategoryBar() {
   return (

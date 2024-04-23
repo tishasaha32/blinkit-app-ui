@@ -5,17 +5,18 @@
     margin-top: 2px;
 }
 .subCategoriesContainer{
-    height: 590px;
+    height: 600px;
     width: 18vw;
     overflow-y: scroll;
     background-color: white;
+    margin-bottom: 1rem;
 }
 .subCategoriesContainer::-webkit-scrollbar {
     display: none;
 }
 .subCategoryContainer{
     border: 1px solid #eeeeee;
-    padding-left: 20px;
+    padding: 1rem 20px;
 }
 .subCategory{
     cursor: pointer;

@@ -11,13 +11,13 @@ function CheckoutPage() {
       <div>
         <div>
           <h2>Select Payment Method</h2>
-          <div>
-            <p>Wallets</p>
-            <p>Add Credit or Debit Cards</p>
-            <p>Netbanking</p>
-            <p>Add New UPI ID</p>
-            <p>Cash</p>
-            <p>Pay Later</p>
+          <div className={styles.paymentMethodsContainer}>
+            <p className={styles.paymentMethod}>Wallets</p>
+            <p className={styles.paymentMethod}>Add Credit or Debit Cards</p>
+            <p className={styles.paymentMethod}>Netbanking</p>
+            <p className={styles.paymentMethod}>Add New UPI ID</p>
+            <p className={styles.paymentMethod}>Cash</p>
+            <p className={styles.paymentMethod}>Pay Later</p>
           </div>
         </div>
       </div>

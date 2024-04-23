@@ -21,34 +21,37 @@ import category19 from "../assets/Category19.png";
 import category20 from "../assets/Category20.png";
 
 import styles from "./CategoryWiseProduct.module.css";
+import { Link } from "react-router-dom";
 
 function CategoryWiseProduct() {
   return (
     <div>
-      <div className={styles.categoryContainer}>
-        <img src={category1} className={styles.category} />
-        <img src={category2} className={styles.category} />
-        <img src={category3} className={styles.category} />
-        <img src={category4} className={styles.category} />
-        <img src={category5} className={styles.category} />
-        <img src={category6} className={styles.category} />
-        <img src={category7} className={styles.category} />
-        <img src={category8} className={styles.category} />
-        <img src={category9} className={styles.category} />
-        <img src={category10} className={styles.category} />
-      </div>
-      <div className={styles.categoryContainer}>
-        <img src={category11} className={styles.category} />
-        <img src={category12} className={styles.category} />
-        <img src={category13} className={styles.category} />
-        <img src={category14} className={styles.category} />
-        <img src={category15} className={styles.category} />
-        <img src={category16} className={styles.category} />
-        <img src={category17} className={styles.category} />
-        <img src={category18} className={styles.category} />
-        <img src={category19} className={styles.category} />
-        <img src={category20} className={styles.category} />
-      </div>
+      <Link to="/products">
+        <div className={styles.categoryContainer}>
+          <img src={category1} className={styles.category} />
+          <img src={category2} className={styles.category} />
+          <img src={category3} className={styles.category} />
+          <img src={category4} className={styles.category} />
+          <img src={category5} className={styles.category} />
+          <img src={category6} className={styles.category} />
+          <img src={category7} className={styles.category} />
+          <img src={category8} className={styles.category} />
+          <img src={category9} className={styles.category} />
+          <img src={category10} className={styles.category} />
+        </div>
+        <div className={styles.categoryContainer}>
+          <img src={category11} className={styles.category} />
+          <img src={category12} className={styles.category} />
+          <img src={category13} className={styles.category} />
+          <img src={category14} className={styles.category} />
+          <img src={category15} className={styles.category} />
+          <img src={category16} className={styles.category} />
+          <img src={category17} className={styles.category} />
+          <img src={category18} className={styles.category} />
+          <img src={category19} className={styles.category} />
+          <img src={category20} className={styles.category} />
+        </div>
+      </Link>
     </div>
   );
 }

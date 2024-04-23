@@ -34,7 +34,7 @@
       "weight": "200g",
       "price": 26,
       "time": "13 MINS",
-      "qty": 2
+      "qty": 0
     },
     {
       "id": "5",
@@ -135,5 +135,6 @@
       "time": "13 MINS",
       "qty": 0
     }
-  ]
+  ],
+  "cartProducts": []
 }

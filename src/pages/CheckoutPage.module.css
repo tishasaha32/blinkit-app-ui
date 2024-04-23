@@ -3,3 +3,16 @@
     padding: 0.8rem 0rem;
     border-bottom: 1px solid #eeeeee;
 }
+
+.paymentMethodsContainer{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+}
+.paymentMethod{
+    border-bottom: 1px solid #e8e8e8;
+    padding: 1rem;
+    font-size: 1.2rem;
+}

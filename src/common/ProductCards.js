@@ -7,6 +7,13 @@ import { CartContext } from "../context/cartContext";
 
 function ProductCards({ inProductPage, products }) {
   const { handleQtyDecrease, handleQtyIncrease } = useContext(CartContext);
+
+  function getRandomProducts(count) {
+    const shuffled = [...products].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  }
+
+  const randomProducts = getRandomProducts(15);
   return (
     <div>
       {!inProductPage && (
@@ -19,7 +26,7 @@ function ProductCards({ inProductPage, products }) {
             : styles.productsContainer
         }
       >
-        {products?.map((product) => (
+        {randomProducts?.map((product) => (
           <div
             key={product.id}
             className={
@@ -57,7 +64,15 @@ function ProductCards({ inProductPage, products }) {
               >
                 {product.title}
               </p>
-              <p className={styles.productWeight}>{product.weight}</p>
+              <p
+                className={
+                  inProductPage
+                    ? styles.productWeightProductPage
+                    : styles.productWeight
+                }
+              >
+                {product.weight}
+              </p>
             </Link>
             <div
               className={
