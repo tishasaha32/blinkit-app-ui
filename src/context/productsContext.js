@@ -21,14 +21,11 @@ const ProductsContextProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    console.log(productId);
     if (!productId) return;
     axios
       .get(`http://localhost:8000/products/${productId}`)
       .then((response) => {
         setProduct(response.data);
-        console.log(response.data);
-        console.log(products);
       })
       .catch((error) => {
         console.log(error.message);

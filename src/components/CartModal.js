@@ -11,21 +11,11 @@ import { Link } from "react-router-dom";
 
 import emptyCart from "../assets/emptyCart.png";
 
-function CartModal({ isOpen, onClose }) {
+function CartModal({ isOpen, onClose, total }) {
   const { cartProducts } = useContext(CartContext);
   const { handleQtyDecrease, handleQtyIncrease } = useContext(CartContext);
   const deliveryCharge = 30;
   const handlingCharge = 20;
-  let total = 0,
-    qty = 0;
-  const cartTotal = () => {
-    cartProducts.forEach((product) => {
-      console.log(product.qty);
-      qty = qty + product.qty;
-      total += product.price * product.qty;
-    });
-  };
-  cartTotal();
 
   return (
     <div className={styles.cartBackdrop} onClick={onClose}>
@@ -44,7 +34,9 @@ function CartModal({ isOpen, onClose }) {
                 <MdOutlineTimer className={styles.timerIcon} />
                 <div>
                   <p className={styles.deliveryTime}>Delivery in 13 MINS</p>
-                  <p className={styles.quantity}>Shipment of {qty} items</p>
+                  <p className={styles.quantity}>
+                    Shipment of {cartProducts.length} items
+                  </p>
                 </div>
               </div>
               <div>
@@ -174,7 +166,7 @@ function CartModal({ isOpen, onClose }) {
                 Your favourite items are just a click away
               </p>
               <Link to="/">
-                <button className={styles.emptyCartButton}>
+                <button className={styles.emptyCartButton} onClick={onClose}>
                   Start Shopping
                 </button>
               </Link>

@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "image": "http://127.0.0.1:5500/frontend/src/assets/bread.png",
       "title": "Britannia 100% Whole Wheat Bread",
       "weight": "200g",
@@ -10,7 +10,7 @@
       "qty": 0
     },
     {
-      "id": 2,
+      "id": "2",
       "image": "http://127.0.0.1:5500/frontend/src/assets/butter.png",
       "title": "Amul Salted Butter",
       "weight": "200g",
@@ -19,7 +19,7 @@
       "qty": 0
     },
     {
-      "id": 3,
+      "id": "3",
       "image": "http://127.0.0.1:5500/frontend/src/assets/cheese.png",
       "title": "Amul Cheese Slices",
       "weight": "200g",
@@ -28,16 +28,16 @@
       "qty": 0
     },
     {
-      "id": 4,
+      "id": "4",
       "image": "http://127.0.0.1:5500/frontend/src/assets/curd.png",
       "title": "Nandini Curd",
       "weight": "200g",
       "price": 26,
       "time": "13 MINS",
-      "qty": 0
+      "qty": 2
     },
     {
-      "id": 5,
+      "id": "5",
       "image": "http://127.0.0.1:5500/frontend/src/assets/milk.png",
       "title": "Nandini Milk",
       "weight": "200g",
@@ -46,7 +46,7 @@
       "qty": 0
     },
     {
-      "id": 6,
+      "id": "6",
       "image": "http://127.0.0.1:5500/frontend/src/assets/eggs.png",
       "title": "Jaya White Eggs",
       "weight": "200g",
@@ -55,7 +55,7 @@
       "qty": 0
     },
     {
-      "id": 7,
+      "id": "7",
       "image": "http://127.0.0.1:5500/frontend/src/assets/milkBread.png",
       "title": "Britannia 100% Whole Milk Bread",
       "weight": "200g",
@@ -64,7 +64,7 @@
       "qty": 0
     },
     {
-      "id": 8,
+      "id": "8",
       "image": "http://127.0.0.1:5500/frontend/src/assets/brownBread.png",
       "title": "Britannia 100% Whole Brown Bread",
       "weight": "200g",
@@ -73,7 +73,7 @@
       "qty": 0
     },
     {
-      "id": 9,
+      "id": "9",
       "image": "http://127.0.0.1:5500/frontend/src/assets/cheeseCubes.png",
       "title": "Amul Cheese Cubes",
       "weight": "200g",
@@ -82,7 +82,7 @@
       "qty": 0
     },
     {
-      "id": 10,
+      "id": "10",
       "image": "http://127.0.0.1:5500/frontend/src/assets/dicedCheese.png",
       "title": "Amul Diced Cheese Cubes",
       "weight": "200g",
@@ -91,7 +91,7 @@
       "qty": 0
     },
     {
-      "id": 11,
+      "id": "11",
       "image": "http://127.0.0.1:5500/frontend/src/assets/paneer.png",
       "title": "Milky Mist paneer",
       "weight": "200g",
@@ -100,7 +100,7 @@
       "qty": 0
     },
     {
-      "id": 12,
+      "id": "12",
       "image": "http://127.0.0.1:5500/frontend/src/assets/pasteurizedMilk.png",
       "title": "Nandini Pasteurized Milk",
       "weight": "200g",
@@ -109,7 +109,7 @@
       "qty": 0
     },
     {
-      "id": 13,
+      "id": "13",
       "image": "http://127.0.0.1:5500/frontend/src/assets/lays.png",
       "title": "Lays",
       "weight": "200g",
@@ -118,7 +118,7 @@
       "qty": 0
     },
     {
-      "id": 14,
+      "id": "14",
       "image": "http://127.0.0.1:5500/frontend/src/assets/soyaStick.png",
       "title": "Haldiram's Soya Sticks",
       "weight": "200g",
@@ -127,7 +127,7 @@
       "qty": 0
     },
     {
-      "id": 15,
+      "id": "15",
       "image": "http://127.0.0.1:5500/frontend/src/assets/pomegranateJuice.png",
       "title": "Tropicana Pomegranate Juice",
       "weight": "200g",
