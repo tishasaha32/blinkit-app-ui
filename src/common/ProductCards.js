@@ -2,18 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import styles from "./ProductCards.module.css";
 import { MdOutlineTimer } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { ProductsContext } from "../context/productsContext";
 import { CartContext } from "../context/cartContext";
 
 function ProductCards({ inProductPage, products }) {
   const { handleQtyDecrease, handleQtyIncrease } = useContext(CartContext);
 
-  function getRandomProducts(count) {
-    const shuffled = [...products].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
-  }
-
-  const randomProducts = getRandomProducts(15);
   return (
     <div>
       {!inProductPage && (
@@ -26,7 +19,7 @@ function ProductCards({ inProductPage, products }) {
             : styles.productsContainer
         }
       >
-        {randomProducts?.map((product) => (
+        {products.map((product) => (
           <div
             key={product.id}
             className={

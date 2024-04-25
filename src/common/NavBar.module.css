@@ -4,17 +4,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    background-color: white;
+    position: fixed;
+    top: 0
 }
 
 .locationContainer{
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
     width: 22vw;
 }
 .modalOpenerIcon{
-    font-size: 1.5rem;
-    padding-top: 1.2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .searchContainer{
@@ -28,7 +33,8 @@
     border-radius: 8px;
 }
 .searchIcon{
-    font-size: 1.2rem;
+    top: 25%;
+    font-size: 1.5rem;
     padding-left: 0.5rem;
 }
 .searchSuggestions {

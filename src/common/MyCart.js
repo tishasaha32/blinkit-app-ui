@@ -6,17 +6,26 @@ import { CartContext } from "../context/cartContext.js";
 
 function MyCart() {
   const { cartProducts } = useContext(CartContext);
-  const [total, setTotal] = useState(0);
-
-  const cartTotal = () => {
-    cartProducts.forEach((product) => {
-      setTotal(total + product.price * product.qty);
-    });
+  const calculateTotal = (products) => {
+    return products.reduce((acc, product) => {
+      return acc + product.price * product.qty;
+    }, 0);
   };
 
+  const calculateQty = (products) => {
+    return products.reduce((acc, product) => {
+      return acc + product.qty;
+    }, 0);
+  };
+
+  const [total, setTotal] = useState(0);
+  const [qty, setQty] = useState(0);
+
   useEffect(() => {
-    setTotal(0);
-    cartTotal();
+    const newTotal = calculateTotal(cartProducts);
+    const newQty = calculateQty(cartProducts);
+    setTotal(newTotal);
+    setQty(newQty);
   }, [cartProducts]);
 
   const [openCartModal, setOpenCartModal] = useState(false);
@@ -39,7 +48,14 @@ function MyCart() {
       <div className={styles.myCartButtonContainer} onClick={handleCartOpen}>
         <button className={styles.myCartButton}>
           <AiOutlineShoppingCart className={styles.myCartIcon} />
-          My Cart
+          {cartProducts.length === 0 ? (
+            "My Cart"
+          ) : (
+            <div className={styles.myCartWithProducts}>
+              <p>{qty} items</p>
+              <p>₹ {total}</p>
+            </div>
+          )}
         </button>
       </div>
     </div>

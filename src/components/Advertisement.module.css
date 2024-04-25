@@ -2,5 +2,6 @@
     display: grid;
     width: 85vw;
     margin: auto;
+    margin-top: 15vh;
     margin-bottom: 1rem;
 }

@@ -1,10 +1,13 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./CartModal.module.css";
 import { RxCross2 } from "react-icons/rx";
 import { MdOutlineTimer } from "react-icons/md";
 import { TiDocumentText } from "react-icons/ti";
 import { MdOutlinePedalBike } from "react-icons/md";
 import { RiRedPacketFill } from "react-icons/ri";
+import { IoLocationOutline } from "react-icons/io5";
+import { MdArrowForwardIos } from "react-icons/md";
+
 import feedingIndiaIcon from "../assets/feedingIndiaIcon.png";
 import { CartContext } from "../context/cartContext";
 import { Link } from "react-router-dom";
@@ -13,9 +16,40 @@ import emptyCart from "../assets/emptyCart.png";
 
 function CartModal({ isOpen, onClose, total }) {
   const { cartProducts } = useContext(CartContext);
+  const tips = [
+    { amount: 20, emoji: "😄" },
+    { amount: 30, emoji: "😍" },
+    { amount: 40, emoji: "🤩" },
+    { amount: 50, emoji: "🙏" },
+  ];
+  const [grandTotal, setGrandTotal] = useState(0);
+  const [isDonationChecked, setIsDonationChecked] = useState(false);
+  // const [isTipSelected, setIsTipSelected] = useState(false);
   const { handleQtyDecrease, handleQtyIncrease } = useContext(CartContext);
   const deliveryCharge = 30;
   const handlingCharge = 20;
+
+  const handleDonation = () => {
+    setIsDonationChecked(!isDonationChecked);
+    if (isDonationChecked) {
+      setGrandTotal(grandTotal - 1);
+    } else {
+      setGrandTotal(grandTotal + 1);
+    }
+  };
+
+  // const handleTip = (amount) => {
+  //   setIsTipSelected(!isTipSelected);
+  //   if (isTipSelected) {
+  //     setGrandTotal(grandTotal - amount);
+  //   } else {
+  //     setGrandTotal(grandTotal + amount);
+  //   }
+  // };
+
+  useEffect(() => {
+    setGrandTotal(total + deliveryCharge + handlingCharge);
+  }, [total]);
 
   return (
     <div className={styles.cartBackdrop} onClick={onClose}>
@@ -112,7 +146,7 @@ function CartModal({ isOpen, onClose, total }) {
 
               <div className={styles.grandTotalContainer}>
                 <p>Grand Total</p>
-                <p>{total + deliveryCharge + handlingCharge}</p>
+                <p>{grandTotal}</p>
               </div>
             </div>
 
@@ -124,7 +158,10 @@ function CartModal({ isOpen, onClose, total }) {
                   Working towards a malnutrition free India.
                 </p>
               </div>
-              <div className={styles.checkBoxContainer}>
+              <div
+                className={styles.checkBoxContainer}
+                onClick={handleDonation}
+              >
                 <p>₹1</p>
                 <input type="checkbox" />
               </div>
@@ -137,10 +174,17 @@ function CartModal({ isOpen, onClose, total }) {
                 your delivery partner.
               </p>
               <div className={styles.tips}>
-                <p className={styles.tip}>😄₹20</p>
-                <p className={styles.tip}>😍₹30</p>
-                <p className={styles.tip}>🤩₹40</p>
-                <p className={styles.tip}>🙏₹50</p>
+                {tips.map((tip) => {
+                  return (
+                    <p
+                      className={styles.tip}
+                      key={tip.amount}
+                      // onClick={() => handleTip(tip.amount)}
+                    >
+                      {tip.emoji}₹{tip.amount}
+                    </p>
+                  );
+                })}
               </div>
             </div>
 
@@ -152,6 +196,23 @@ function CartModal({ isOpen, onClose, total }) {
                 Orders cannot be cancelled once packed for delivery. In case of
                 unexpected delays, a refund will be provided, if applicable.
               </p>
+            </div>
+            <div className={styles.orderSummary}>
+              <div className={styles.locationDetails}>
+                <IoLocationOutline />
+                <p>Location</p>
+                <p>Change</p>
+              </div>
+              <div className={styles.orderSummaryDetails}>
+                <div>
+                  <p style={{ fontWeight: "bold" }}>₹{grandTotal}</p>
+                  <p style={{ fontSize: "0.8rem" }}>TOTAL</p>
+                </div>
+                <div className={styles.proceedToPay}>
+                  <p>Proceed to Pay</p>
+                  <MdArrowForwardIos className={styles.arrowIcon} />
+                </div>
+              </div>
             </div>
           </>
         )}

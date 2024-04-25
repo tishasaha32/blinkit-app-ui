@@ -153,7 +153,6 @@
 .checkBoxContainer{
     display: flex;
     justify-content: center;
-    flex: 1;
 }
 
 .tipContainer{
@@ -173,6 +172,10 @@
     border-radius: 10px;
     padding: 0.9em;
     color: #666666;
+    cursor: pointer;
+}
+.tip:hover{
+    background-color: #f5f5f5;
 }
 
 .cancellationContainer{
@@ -180,6 +183,41 @@
     padding: 1rem 10px;
     border-radius: 10px;
     margin: 10px;
+    margin-bottom: 20vh;
+}
+
+.orderSummary{
+    width: 25%;
+    position: fixed;
+    bottom: 0;
+    background-color: #ffffff;
+    padding: 1rem 10px; 
+    border-radius: 10px;  
+}
+.locationDetails{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ebebeb;
+    margin: 10px;
+}
+.orderSummaryDetails{
+    display: flex;
+    justify-content: space-between;
+    background-color: #0c831f;
+    color: white;
+    margin: 0 1rem;
+    padding: 10px;
+    border-radius: 10px;
+}
+.proceedToPay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.arrowIcon{
+    margin-top: 4px;
 }
 
 .emptyCartContainer{
@@ -194,8 +232,8 @@
     gap: 10px;
 }
 .emptyCartImage{
-    width: 20vw;
-    height: 40vh;
+    width: 14vw;
+    height: 30vh;
 }
 .emptyCartText{
     font-size: 1.1rem; 
@@ -207,7 +245,8 @@
     margin-bottom: 10px;
 }
 .emptyCartButton{
-    background-color: #4a9533; 
+    background-color: #4a9533;
+    font-weight: bold; 
     color: white;
     border-radius: 8px; 
     border: none;

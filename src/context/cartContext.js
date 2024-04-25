@@ -21,27 +21,48 @@ const CartContextProvider = ({ children }) => {
       });
   };
 
-  const updateCart = (newProducts) => {
+  const updateCart = async (id, newProducts) => {
+    //UI Logic
     const newCartProducts = newProducts.filter((product) => product.qty > 0);
     setCartProducts(newCartProducts);
+    // Backend Logic
+    // const cartProduct = products.find((product) => product.id === id);
+    // console.log(cartProduct, "Single Cart Product");
+
+    localStorage.setItem("cartProducts", JSON.stringify(newCartProducts));
+
     // axios
-    //   .post("http://localhost:8000/cartProducts", newCartProducts)
-    //   .then(() => {})
+    //   .get(`http://localhost:8000/cartProducts/${id}`)
+    //   .then((response) => {
+    //     if (response.data) {
+    //       console.log(response.data, "GET data");
+    //       axios
+    //         .put(`http://localhost:8000/cartProducts/${id}`, cartProduct)
+    //         .then((response) => {
+    //           console.log(response.data);
+    //         })
+    //         .catch((error) => {
+    //           console.error("PUT could not update cart", error);
+    //         });
+    //     }
+    //   })
     //   .catch((error) => {
-    //     console.error("Error updating cart:", error);
+    //     axios
+    //       .post(`http://localhost:8000/cartProducts`, cartProduct)
+    //       .then(() => {})
+    //       .catch((error) => {
+    //         console.error("Error updating cart:", error);
+    //       });
+    //     // console.error("Error fetching cart products:", error);
     //   });
   };
 
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:8000/cartProducts")
-  //     .then((response) => {
-  //       setCartProducts(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching cart products:", error);
-  //     });
-  // }, [cartProducts]);
+  useEffect(() => {
+    const storedCartProducts = localStorage.getItem("cartProducts");
+    if (storedCartProducts) {
+      setCartProducts(JSON.parse(storedCartProducts));
+    }
+  }, []);
 
   const handleQtyIncrease = (id) => {
     const newProducts = [...products];
@@ -51,7 +72,7 @@ const CartContextProvider = ({ children }) => {
       setProducts(newProducts);
       setProduct(product);
       updateServerProduct(id, product);
-      updateCart(newProducts);
+      updateCart(id, newProducts);
     }
   };
 
@@ -66,7 +87,7 @@ const CartContextProvider = ({ children }) => {
       setProducts(newProducts);
       setProduct(product);
       updateServerProduct(id, product);
-      updateCart(newProducts);
+      updateCart(id, newProducts);
     }
   };
 

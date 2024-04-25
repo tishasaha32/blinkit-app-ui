@@ -11,7 +11,7 @@ function Modal({ isOpen, onClose }) {
       >
         <div className={styles.changeLocationConatiner}>
           <p>Change Location</p>
-          <RxCross2 onClick={onClose} />
+          <RxCross2 onClick={onClose} className={styles.crossIcon} />
         </div>
         <div className={styles.detectLocationconatiner}>
           <button className={styles.detectLocationButton}>
