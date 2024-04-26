@@ -1,0 +1,56 @@
+.deliveryDetailsContainer{
+    border: 1px solid #ebebeb;
+    margin: 0 2rem;
+    margin-bottom: 1rem;
+    height: max-content;
+}
+.deliveryAddress{
+    font-size: 1.5rem;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 1rem 1rem;
+}
+.myCart{
+    border-bottom: 1px solid #e8e8e8;
+    padding: 1rem 1rem;
+}
+.cartProductContainer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 25vw;
+    padding: 0.5rem 2rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+.cartProductQty{
+    font-size: 0.9rem;
+    color: #7b7b7b;
+}
+.cartProductImage{
+    width: 5rem;
+}
+.cartProductTitle{
+    font-size: 0.9rem;
+    color: #7b7b7b;
+    font-weight: 600;
+}
+.cartProductWeight{
+    font-size: 0.8rem;
+    color: #7b7b7b;
+}
+.cartProductPrice{
+    font-size: 0.9rem;
+    color: #7b7b7b;
+    font-weight: 600;
+}
+.payNowButton{
+    background-color: #4a9533;
+    font-weight: bold; 
+    font-size: 1.2rem;
+    color: white; 
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    height: 3rem;
+    border-radius: 10px;
+}

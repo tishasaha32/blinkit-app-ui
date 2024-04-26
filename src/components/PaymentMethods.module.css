@@ -1,0 +1,40 @@
+.paymentMethodsContainer{
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+}
+.paymentMethodContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e8e8e8;
+}
+.selectedpaymentMethodContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.paymentMethod{
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: #4b4b4b
+}
+.dropDownArrow{
+    margin-right: 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: transform 0.25s ease-in 0s;
+}
+.upArrow{
+    margin-right: 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transform: rotate(180deg);
+    transition: transform 0.25s ease-in 0s;
+}
+.selectPaymentMethodText{
+    margin-bottom: 1rem;
+}

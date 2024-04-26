@@ -1,18 +1,19 @@
+.checkoutPage{
+    overflow-x: hidden;
+}
 .logoContainer{
     width: 100vw;
-    padding: 0.8rem 0rem;
+    padding: 0.8rem 1rem;
     border-bottom: 1px solid #eeeeee;
+    position: fixed;
+    top: 0;
+    background-color: white;
 }
-
-.paymentMethodsContainer{
+.checkoutContainer{
+    margin-top: 12vh;
     display: flex;
-    flex-direction: column;
-    width: 30vw;
-    border: 1px solid #ebebeb;
-    border-radius: 10px;
-}
-.paymentMethod{
-    border-bottom: 1px solid #e8e8e8;
-    padding: 1rem;
-    font-size: 1.2rem;
+    justify-content: center;
+    width: 100vw;
+    gap: 1rem;
+    padding-top: 2rem;
 }

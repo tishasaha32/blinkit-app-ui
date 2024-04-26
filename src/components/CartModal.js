@@ -5,7 +5,6 @@ import { MdOutlineTimer } from "react-icons/md";
 import { TiDocumentText } from "react-icons/ti";
 import { MdOutlinePedalBike } from "react-icons/md";
 import { RiRedPacketFill } from "react-icons/ri";
-import { IoLocationOutline } from "react-icons/io5";
 import { MdArrowForwardIos } from "react-icons/md";
 
 import feedingIndiaIcon from "../assets/feedingIndiaIcon.png";
@@ -198,21 +197,22 @@ function CartModal({ isOpen, onClose, total }) {
               </p>
             </div>
             <div className={styles.orderSummary}>
-              <div className={styles.locationDetails}>
-                <IoLocationOutline />
-                <p>Location</p>
-                <p>Change</p>
-              </div>
-              <div className={styles.orderSummaryDetails}>
-                <div>
-                  <p style={{ fontWeight: "bold" }}>₹{grandTotal}</p>
-                  <p style={{ fontSize: "0.8rem" }}>TOTAL</p>
+              <Link
+                to="/checkout"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <div className={styles.orderSummaryDetails}>
+                  <div>
+                    <p style={{ fontWeight: "bold" }}>₹{grandTotal}</p>
+                    <p style={{ fontSize: "0.8rem" }}>TOTAL</p>
+                  </div>
+
+                  <div className={styles.proceedToPay}>
+                    <p>Proceed to Pay</p>
+                    <MdArrowForwardIos className={styles.arrowIcon} />
+                  </div>
                 </div>
-                <div className={styles.proceedToPay}>
-                  <p>Proceed to Pay</p>
-                  <MdArrowForwardIos className={styles.arrowIcon} />
-                </div>
-              </div>
+              </Link>
             </div>
           </>
         )}

@@ -16,7 +16,7 @@
       "weight": "200g",
       "price": 285,
       "time": "13 MINS",
-      "qty": 0
+      "qty": 1
     },
     {
       "id": "3",
@@ -25,7 +25,7 @@
       "weight": "200g",
       "price": 285,
       "time": "13 MINS",
-      "qty": 0
+      "qty": 1
     },
     {
       "id": "4",
@@ -34,7 +34,7 @@
       "weight": "200g",
       "price": 26,
       "time": "13 MINS",
-      "qty": 2
+      "qty": 0
     },
     {
       "id": "5",

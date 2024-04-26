@@ -1,25 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../common/Logo";
 import styles from "./CheckoutPage.module.css";
 
+import PaymentMethods from "../components/PaymentMethods";
+import DeliveryDetails from "../components/DeliveryDetails";
+
 function CheckoutPage() {
+  const [inCheckoutPage, setInCheckoutPage] = useState(false);
   return (
-    <div>
+    <div className={styles.checkoutPage}>
       <div className={styles.logoContainer}>
-        <Logo inCheckoutPage={true} />
+        <Logo />
       </div>
-      <div>
-        <div>
-          <h2>Select Payment Method</h2>
-          <div className={styles.paymentMethodsContainer}>
-            <p className={styles.paymentMethod}>Wallets</p>
-            <p className={styles.paymentMethod}>Add Credit or Debit Cards</p>
-            <p className={styles.paymentMethod}>Netbanking</p>
-            <p className={styles.paymentMethod}>Add New UPI ID</p>
-            <p className={styles.paymentMethod}>Cash</p>
-            <p className={styles.paymentMethod}>Pay Later</p>
-          </div>
-        </div>
+      <div className={styles.checkoutContainer}>
+        <PaymentMethods />
+        <DeliveryDetails inCheckoutPage={true} />
       </div>
     </div>
   );

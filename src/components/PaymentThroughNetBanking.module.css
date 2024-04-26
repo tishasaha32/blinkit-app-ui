@@ -1,0 +1,46 @@
+.netbankingContentContainer{
+    border-bottom: 1px solid #e8e8e8;
+}
+.netbankingContent{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 1rem;
+    gap: 1rem;
+}
+.bankContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    padding: 1rem 0;
+    cursor: pointer;
+}
+.selectedBankContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #119199;
+    background-color: #f6fcfc;
+    border-radius: 10px;
+    padding: 1rem 0;
+    cursor: pointer;
+}
+.bankImgAndTickLogo{
+    display: flex;
+}
+.axisLogo, .pnbLogo, .kotakLogo, .bobLogo, .iciciLogo, .canaraLogo, .hdfcLogo, .sbiLogo{
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+}
+.netbankingCheckmark{
+    font-size: 1.3rem;
+    color: #acacac;
+}
+.selectedNetbankingCheckmark{
+    color: #119199;
+    font-size: 1.3rem;
+}

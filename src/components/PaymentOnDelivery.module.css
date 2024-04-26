@@ -1,0 +1,47 @@
+.paymentOnDeliveryContainer{
+    border-bottom: 1px solid #ebebeb;
+}
+.upiContentContainer{
+    margin: 1rem;
+    padding: 10px;
+    background-color: #f6fcfc;
+    border: 1px solid #119199;
+    border-radius: 10px;
+}
+.selectPaymentMethodText{
+    color: gray;
+}
+.upiLogosContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin: 10px 0;
+}
+.upiLogo{
+    display: flex;
+    padding: 4px 8px 2px 8px;
+    border: 1px solid #ebebeb;
+    border-radius: 4px; 
+}
+.paytmLogo, .gpayLogo, .phonpeLogo, .bhimLogo{
+    width: 3rem;
+    height: 1.5rem;
+    background-color: white;
+}
+.paymentByCash{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.checkoutButton{
+    background-color:#4a9533;
+    color: white;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    padding: 10px;
+    width: 30vw;
+    margin: 1rem 0;
+    cursor: pointer;
+    font-size: 1rem;
+}

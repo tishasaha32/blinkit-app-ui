@@ -3,3 +3,26 @@
     padding: 0px;
     box-sizing: border-box;
 }
+/* Target the scrollbar itself */
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #f0f0f0; /* Background color of the scrollbar */
+  }
+  
+  /* Handle or "thumb" */
+  ::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar handle */
+    border-radius: 10px; /* Roundness of the scrollbar handle */
+    border: 2px solid #ddd; /* Border of the scrollbar handle */
+  }
+  
+  /* Track (background) */
+  ::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* Background color of the scrollbar track */
+  }
+  
+  /* Optional: Add hover effect for the scrollbar handle */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Color when hovering over the scrollbar */
+  }
+      

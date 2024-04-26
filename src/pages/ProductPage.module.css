@@ -1,6 +1,7 @@
 .productContainer{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-top: 10vh;
 }
 .productImageContainer{
     display: flex;
@@ -73,7 +74,6 @@
     cursor: pointer;  
     margin: 6px 10px;
 }
-
 
 .whyShopContainer{
     width: 40vw;

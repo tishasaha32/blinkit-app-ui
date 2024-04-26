@@ -1,0 +1,90 @@
+.cardContentContainer{
+    border-bottom: 1px solid #ebebeb;
+}
+.cardContent{
+    display: flex;
+    gap: 1rem;
+    margin: 1rem;
+    padding: 10px;
+    background-color: #f6fcfc;
+    border: 1px solid #119199;
+    border-radius: 10px;
+}
+.cardCheckmark{
+    color:#0C831F;
+    font-size: 2.5rem;
+}
+.cardLogos{
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+.logoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ebebeb;
+    border-radius: 4px; 
+    background-color: white;
+}
+.visaLogo{
+    width: 2.2rem;
+    height: 1rem;
+}
+.mastercardLogo{
+    width: 3rem;
+    height: 2rem; 
+}
+.rupayLogo{
+    width: 3rem;
+    height: 2rem;  
+}
+
+.cardForm{
+    margin: 1rem 0;
+}
+.nameInput, .cardInput,.nicknameInput{
+    width: 28vw;
+    margin: 4px 0;
+    padding: 12px;
+    border: 1px solid #b5b5b5;
+    border-radius: 5px;
+}
+
+.expiryAndCVV{
+    display: flex;
+    gap: 1rem
+}
+.expiryInput{
+    width: 18vw;
+    margin: 4px 0;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #b5b5b5;
+}
+.cvvInput{
+    width: 9vw;
+    margin: 4px 0;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #b5b5b5;
+}
+.nameInput, .cardInput, .nicknameInput, .expiryInput, .cvvInput:focus{
+    outline: none;
+}
+.checkoutButton{
+    width: 28vw;
+    margin: 8px 0 0 0;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #0C831F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.terms{
+    width: 28vw;
+    font-size: 12px;
+    color: #b5b5b5;
+}

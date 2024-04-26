@@ -1,5 +1,5 @@
 .navBar{
-    padding: 1rem 0rem;
+    padding: 8px 0;
     border-bottom: 0.2px solid #eeeeee;
     display: flex;
     justify-content: center;
@@ -10,12 +10,21 @@
     top: 0
 }
 
+.locationWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 22vw;
+    margin: 0 2rem;
+}
 .locationContainer{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    width: 22vw;
+}
+.location{
+    font-size: 0.9rem;
+    color: #929292;
 }
 .modalOpenerIcon{
     font-size: 1.2rem;

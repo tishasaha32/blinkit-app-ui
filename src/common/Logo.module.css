@@ -8,8 +8,8 @@
 .logoContainerInCheckoutPage{
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 10vw;
-    padding-left: 10px;
 }
 .blinkitLogo{
     width: 12rem;

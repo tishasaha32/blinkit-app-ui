@@ -23,9 +23,12 @@ function NavBar() {
     <div className={styles.navBar}>
       <Logo />
       {openModal && <Modal isOpen={openModal} onClose={handleClose} />}
-      <div className={styles.locationContainer} onClick={handleOpen}>
+      <div className={styles.locationWrapper} onClick={handleOpen}>
         <h3> Delivery in 12 minutes</h3>
-        <IoMdArrowDropdown className={styles.modalOpenerIcon} />
+        <div className={styles.locationContainer}>
+          <p className={styles.location}>Bangalore, Karnataka, India</p>
+          <IoMdArrowDropdown className={styles.modalOpenerIcon} />
+        </div>
       </div>
       <Link to="/search">
         <div className={styles.searchContainer}>

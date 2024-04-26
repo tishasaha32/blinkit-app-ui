@@ -18,7 +18,6 @@ function Product() {
   const { handleQtyDecrease, handleQtyIncrease } = useContext(CartContext);
   useEffect(() => {
     setProductId(id);
-    // console.log(product);
   }, [productId]);
 
   return (
@@ -43,7 +42,6 @@ function Product() {
             {product.qty === 0 && (
               <button
                 onClick={() => {
-                  console.log("button clicked");
                   handleQtyIncrease(product.id);
                 }}
                 className={styles.addButton}

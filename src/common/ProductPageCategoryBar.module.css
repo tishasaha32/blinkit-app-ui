@@ -1,9 +1,10 @@
 .productPageCategoryBar{
-    width: 100vw;
-    background-color: white;
-    position: fixed;
-    top: 13.7vh;
+    width: 100%;
+    margin-top: 11.5vh;
     box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15);
+}
+.productPageCategoryBar::-webkit-scrollbar{
+    display: none;
 }
 .categoriesContainer{
     display: flex;

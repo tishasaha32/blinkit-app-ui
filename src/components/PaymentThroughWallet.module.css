@@ -1,0 +1,75 @@
+.walletContent{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+.walletContainer{
+    border: 1px solid #ebebeb;
+    padding: 1rem;
+    width: 10rem;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.selectedWalletContainer{
+    border: 1px solid #119199;
+    background-color: #f6fcfc;
+    padding: 1rem;
+    width: 10rem;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.walletImgAndTickLogo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.walletImgContainer{
+    width: 4rem;
+    height: 2rem;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.paytmLogo{
+    width: 3rem;
+}
+.mobikwikLogo{
+    width: 1.5rem;
+}
+.walletCheckmark{
+    font-size: 1.3rem;
+    color: #0C831F;
+}
+.selectedWalletCheckmark{
+    font-size: 1.3rem;
+    color: #acacac;
+}
+.link{
+    cursor: pointer;
+    color: #0C831F;
+    font-weight: bold;
+}
+.checkoutButton{
+    background-color:#4a9533;
+    color: white;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    padding: 10px;
+    width: 30vw;
+    margin: 1rem 0;
+    cursor: pointer;
+    font-size: 1rem;
+}

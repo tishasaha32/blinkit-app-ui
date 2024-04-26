@@ -1,8 +1,14 @@
 import React from "react";
 import styles from "./Modal.module.css";
 import { RxCross2 } from "react-icons/rx";
+import useLocation from "../hooks/useLocation";
 
 function Modal({ isOpen, onClose }) {
+  const location = useLocation();
+
+  const handleLocation = () => {
+    console.log(location);
+  };
   return (
     <div className={styles.modalBackdrop} onClick={onClose}>
       <div
@@ -14,7 +20,10 @@ function Modal({ isOpen, onClose }) {
           <RxCross2 onClick={onClose} className={styles.crossIcon} />
         </div>
         <div className={styles.detectLocationconatiner}>
-          <button className={styles.detectLocationButton}>
+          <button
+            onClick={handleLocation}
+            className={styles.detectLocationButton}
+          >
             Detect my location
           </button>
           <button className={styles.orButton}>or</button>
