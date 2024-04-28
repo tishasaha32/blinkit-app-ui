@@ -174,9 +174,18 @@
     color: #666666;
     cursor: pointer;
 }
+.tipSelected{
+    border: 1px solid #4a9533;
+    background-color: #f6fcfc;
+    border-radius: 10px;
+    padding: 0.9em;
+    color: #666666;
+    cursor: pointer;
+}
 .tip:hover{
     background-color: #f5f5f5;
 }
+
 
 .cancellationContainer{
     background-color: #ffffff;

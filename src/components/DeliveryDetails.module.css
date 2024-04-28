@@ -9,9 +9,17 @@
     border-bottom: 1px solid #e8e8e8;
     padding: 1rem 1rem;
 }
-.myCart{
+.myCartTextContainer{
     border-bottom: 1px solid #e8e8e8;
-    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.myCart{
+    padding: 1rem;
+}
+.total{
+    padding: 1rem;
 }
 .cartProductContainer{
     display: flex;

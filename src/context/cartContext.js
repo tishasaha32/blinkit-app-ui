@@ -7,6 +7,7 @@ export const CartContext = createContext();
 const CartContextProvider = ({ children }) => {
   const { products, setProducts, setProduct } = useContext(ProductsContext);
   const [cartProducts, setCartProducts] = useState([]);
+  const [grandTotal, setGrandTotal] = useState(0);
 
   const updateServerProduct = (id, updatedProduct) => {
     axios
@@ -22,46 +23,21 @@ const CartContextProvider = ({ children }) => {
   };
 
   const updateCart = async (id, newProducts) => {
-    //UI Logic
     const newCartProducts = newProducts.filter((product) => product.qty > 0);
     setCartProducts(newCartProducts);
-    // Backend Logic
-    // const cartProduct = products.find((product) => product.id === id);
-    // console.log(cartProduct, "Single Cart Product");
 
     localStorage.setItem("cartProducts", JSON.stringify(newCartProducts));
-
-    // axios
-    //   .get(`http://localhost:8000/cartProducts/${id}`)
-    //   .then((response) => {
-    //     if (response.data) {
-    //       console.log(response.data, "GET data");
-    //       axios
-    //         .put(`http://localhost:8000/cartProducts/${id}`, cartProduct)
-    //         .then((response) => {
-    //           console.log(response.data);
-    //         })
-    //         .catch((error) => {
-    //           console.error("PUT could not update cart", error);
-    //         });
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     axios
-    //       .post(`http://localhost:8000/cartProducts`, cartProduct)
-    //       .then(() => {})
-    //       .catch((error) => {
-    //         console.error("Error updating cart:", error);
-    //       });
-    //     // console.error("Error fetching cart products:", error);
-    //   });
   };
-
   useEffect(() => {
     const storedCartProducts = localStorage.getItem("cartProducts");
     if (storedCartProducts) {
       setCartProducts(JSON.parse(storedCartProducts));
     }
+    // localStorage.setItem("grandTotal", JSON.stringify(grandTotal));
+    // const storedGrandTotal = localStorage.getItem("grandTotal");
+    // if (storedGrandTotal) {
+    //   setGrandTotal(JSON.parse(storedGrandTotal));
+    // }
   }, []);
 
   const handleQtyIncrease = (id) => {
@@ -93,7 +69,13 @@ const CartContextProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cartProducts, handleQtyIncrease, handleQtyDecrease }}
+      value={{
+        cartProducts,
+        handleQtyIncrease,
+        handleQtyDecrease,
+        grandTotal,
+        setGrandTotal,
+      }}
     >
       {children}
     </CartContext.Provider>

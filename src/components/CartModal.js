@@ -14,16 +14,15 @@ import { Link } from "react-router-dom";
 import emptyCart from "../assets/emptyCart.png";
 
 function CartModal({ isOpen, onClose, total }) {
-  const { cartProducts } = useContext(CartContext);
+  const { cartProducts, grandTotal, setGrandTotal } = useContext(CartContext);
   const tips = [
     { amount: 20, emoji: "😄" },
     { amount: 30, emoji: "😍" },
     { amount: 40, emoji: "🤩" },
     { amount: 50, emoji: "🙏" },
   ];
-  const [grandTotal, setGrandTotal] = useState(0);
   const [isDonationChecked, setIsDonationChecked] = useState(false);
-  // const [isTipSelected, setIsTipSelected] = useState(false);
+  const [selectedTip, setSelectedTip] = useState(0);
   const { handleQtyDecrease, handleQtyIncrease } = useContext(CartContext);
   const deliveryCharge = 30;
   const handlingCharge = 20;
@@ -37,14 +36,38 @@ function CartModal({ isOpen, onClose, total }) {
     }
   };
 
-  // const handleTip = (amount) => {
-  //   setIsTipSelected(!isTipSelected);
-  //   if (isTipSelected) {
-  //     setGrandTotal(grandTotal - amount);
-  //   } else {
-  //     setGrandTotal(grandTotal + amount);
-  //   }
-  // };
+  const handleTip = (amount) => {
+    if (amount === selectedTip) {
+      setGrandTotal((prevAmt) => prevAmt - selectedTip);
+      setSelectedTip(0);
+      return;
+    }
+    // if (selectedTip) {
+    // If a previous tip was selected, subtract its amount from grandTotal
+    console.log(
+      "Before> ",
+      "grandTotal: ",
+      grandTotal,
+      "selectedTip: ",
+      selectedTip
+    );
+    setGrandTotal((prevAmt) => prevAmt - selectedTip);
+    console.log("After> ", "grandTotal: ", grandTotal);
+    // }
+
+    // Update selectedTip to the new tip
+    setSelectedTip(amount);
+
+    // Add the new tip's amount to grandTotal
+    setGrandTotal((prevAmt) => prevAmt + amount);
+    console.log(
+      "Final> ",
+      "grandTotal: ",
+      grandTotal,
+      "selectedTip: ",
+      selectedTip
+    );
+  };
 
   useEffect(() => {
     setGrandTotal(total + deliveryCharge + handlingCharge);
@@ -176,9 +199,13 @@ function CartModal({ isOpen, onClose, total }) {
                 {tips.map((tip) => {
                   return (
                     <p
-                      className={styles.tip}
+                      className={
+                        selectedTip === tip.amount
+                          ? styles.tipSelected
+                          : styles.tip
+                      }
                       key={tip.amount}
-                      // onClick={() => handleTip(tip.amount)}
+                      onClick={() => handleTip(tip.amount)}
                     >
                       {tip.emoji}₹{tip.amount}
                     </p>

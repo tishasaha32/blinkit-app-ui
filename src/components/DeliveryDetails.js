@@ -4,7 +4,7 @@ import { CartContext } from "../context/cartContext";
 import { Link } from "react-router-dom";
 
 function DeliveryDetails({ inCheckoutPage }) {
-  const { cartProducts } = useContext(CartContext);
+  const { cartProducts, grandTotal } = useContext(CartContext);
 
   return (
     <div className={styles.deliveryDetailsContainer}>
@@ -13,7 +13,12 @@ function DeliveryDetails({ inCheckoutPage }) {
       ) : (
         <p className={styles.deliveryAddress}> Order Summary </p>
       )}
-      {inCheckoutPage && <p className={styles.myCart}> My Cart </p>}
+      {inCheckoutPage && (
+        <div className={styles.myCartTextContainer}>
+          <p className={styles.myCart}> My Cart </p>
+          <p className={styles.total}> Total: {grandTotal}</p>
+        </div>
+      )}
       {cartProducts?.map((cartProduct) => {
         return (
           <div key={cartProduct.id} className={styles.cartProductContainer}>
