@@ -33,6 +33,10 @@ const CartContextProvider = ({ children }) => {
     if (storedCartProducts) {
       setCartProducts(JSON.parse(storedCartProducts));
     }
+    const finalAmount = localStorage.getItem("grandTotal");
+    if (finalAmount) {
+      setGrandTotal(finalAmount);
+    }
   }, []);
 
   const handleQtyIncrease = (id) => {

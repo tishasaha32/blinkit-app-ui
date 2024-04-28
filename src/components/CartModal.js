@@ -6,7 +6,7 @@ import { TiDocumentText } from "react-icons/ti";
 import { MdOutlinePedalBike } from "react-icons/md";
 import { RiRedPacketFill } from "react-icons/ri";
 import { MdArrowForwardIos } from "react-icons/md";
-
+import { useNavigate } from "react-router-dom";
 import feedingIndiaIcon from "../assets/feedingIndiaIcon.png";
 import { CartContext } from "../context/cartContext";
 import { Link } from "react-router-dom";
@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import emptyCart from "../assets/emptyCart.png";
 
 function CartModal({ isOpen, onClose, total }) {
+  const navigate = useNavigate();
   const { cartProducts, grandTotal, setGrandTotal } = useContext(CartContext);
   const tips = [
     { amount: 20, emoji: "😄" },
@@ -42,31 +43,19 @@ function CartModal({ isOpen, onClose, total }) {
       setSelectedTip(0);
       return;
     }
-    // if (selectedTip) {
-    // If a previous tip was selected, subtract its amount from grandTotal
-    console.log(
-      "Before> ",
-      "grandTotal: ",
-      grandTotal,
-      "selectedTip: ",
-      selectedTip
-    );
     setGrandTotal((prevAmt) => prevAmt - selectedTip);
     console.log("After> ", "grandTotal: ", grandTotal);
-    // }
 
     // Update selectedTip to the new tip
     setSelectedTip(amount);
 
     // Add the new tip's amount to grandTotal
     setGrandTotal((prevAmt) => prevAmt + amount);
-    console.log(
-      "Final> ",
-      "grandTotal: ",
-      grandTotal,
-      "selectedTip: ",
-      selectedTip
-    );
+  };
+
+  const handleCart = () => {
+    localStorage.setItem("grandTotal", grandTotal);
+    navigate("/checkOut");
   };
 
   useEffect(() => {
@@ -224,22 +213,22 @@ function CartModal({ isOpen, onClose, total }) {
               </p>
             </div>
             <div className={styles.orderSummary}>
-              <Link
+              {/* <Link
                 to="/checkout"
                 style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <div className={styles.orderSummaryDetails}>
-                  <div>
-                    <p style={{ fontWeight: "bold" }}>₹{grandTotal}</p>
-                    <p style={{ fontSize: "0.8rem" }}>TOTAL</p>
-                  </div>
-
-                  <div className={styles.proceedToPay}>
-                    <p>Proceed to Pay</p>
-                    <MdArrowForwardIos className={styles.arrowIcon} />
-                  </div>
+              > */}
+              <div className={styles.orderSummaryDetails} onClick={handleCart}>
+                <div>
+                  <p style={{ fontWeight: "bold" }}>₹{grandTotal}</p>
+                  <p style={{ fontSize: "0.8rem" }}>TOTAL</p>
                 </div>
-              </Link>
+
+                <div className={styles.proceedToPay}>
+                  <p>Proceed to Pay</p>
+                  <MdArrowForwardIos className={styles.arrowIcon} />
+                </div>
+              </div>
+              {/* </Link> */}
             </div>
           </>
         )}
