@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./OrderConfirmed.module.css";
 import DeliveryDetails from "../components/DeliveryDetails";
 import Logo from "../common/Logo";
 import { Link } from "react-router-dom";
+import { ProductsContext } from "../context/productsContext";
+import { CartContext } from "../context/cartContext";
+import productList from "../helper/products";
 
 function OrderConfirmed() {
+  const { products, setProducts } = useContext(ProductsContext);
+  const { cartProducts, setCartProducts } = useContext(CartContext);
+  const handleShopAgain = () => {
+    setCartProducts([]);
+    setProducts(productList);
+    localStorage.setItem("products", JSON.stringify(productList));
+  };
   return (
     <div>
       <div className={styles.logoContainer}>
@@ -15,7 +25,12 @@ function OrderConfirmed() {
           <h1>Thank you for your Purchase!</h1>
           <h3>Your order will be delivered shortly.</h3>
           <Link to="/">
-            <button className={styles.shopAgainButton}>Shop Again</button>
+            <button
+              className={styles.shopAgainButton}
+              onClick={() => handleShopAgain()}
+            >
+              Shop Again
+            </button>
           </Link>
         </div>
         <DeliveryDetails />
