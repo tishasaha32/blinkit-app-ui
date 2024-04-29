@@ -31,7 +31,7 @@ const productList = [
     weight: "200g",
     price: 285,
     time: "13 MINS",
-    qty: 1,
+    qty: 0,
   },
   {
     id: "3",
@@ -40,7 +40,7 @@ const productList = [
     weight: "200g",
     price: 285,
     time: "13 MINS",
-    qty: 1,
+    qty: 0,
   },
   {
     id: "4",

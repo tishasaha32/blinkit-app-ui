@@ -9,19 +9,6 @@ const CartContextProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
   const [grandTotal, setGrandTotal] = useState(0);
 
-  const updateServerProduct = (id, updatedProduct) => {
-    axios
-      .patch(`http://localhost:8000/products/${id}`, {
-        qty: updatedProduct.qty,
-      })
-      .then(() => {
-        console.log("Product updated successfully");
-      })
-      .catch((error) => {
-        console.error("Error updating product:", error);
-      });
-  };
-
   const updateCart = async (id, newProducts) => {
     const newCartProducts = newProducts.filter((product) => product.qty > 0);
     setCartProducts(newCartProducts);
@@ -42,11 +29,12 @@ const CartContextProvider = ({ children }) => {
   const handleQtyIncrease = (id) => {
     const newProducts = [...products];
     const product = newProducts.find((product) => product.id === id);
+    console.log(product);
     if (product) {
       product.qty += 1;
       setProducts(newProducts);
+      localStorage.setItem("products", JSON.stringify(newProducts));
       setProduct(product);
-      updateServerProduct(id, product);
       updateCart(id, newProducts);
     }
   };
@@ -60,8 +48,8 @@ const CartContextProvider = ({ children }) => {
         product.qty = 0;
       }
       setProducts(newProducts);
+      localStorage.setItem("products", JSON.stringify(newProducts));
       setProduct(product);
-      updateServerProduct(id, product);
       updateCart(id, newProducts);
     }
   };

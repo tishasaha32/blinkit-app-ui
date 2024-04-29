@@ -9,16 +9,14 @@ const ProductsContextProvider = ({ children }) => {
   const [product, setProduct] = useState([]);
   const [productId, setProductId] = useState();
 
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:8000/products")
-  //     .then((response) => {
-  //       setProducts(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching products:", error);
-  //     });
-  // }, []);
+  useEffect(() => {
+    const updatedProducts = localStorage.getItem("products");
+    if (updatedProducts) {
+      setProducts(JSON.parse(updatedProducts));
+    } else {
+      setProducts(productList);
+    }
+  }, []);
 
   // useEffect(() => {
   //   if (!productId) return;
