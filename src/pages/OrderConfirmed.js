@@ -15,8 +15,10 @@ function OrderConfirmed() {
     localStorage.setItem("cartProducts", JSON.stringify([]));
     const newProducts = productList.map((product) => {
       if (product.qty > 0) product.qty = 0;
+      return product;
     });
-    setProducts(productList);
+    // console.log(newProducts);
+    setProducts(newProducts);
     localStorage.setItem("products", JSON.stringify(productList));
   };
   return (
