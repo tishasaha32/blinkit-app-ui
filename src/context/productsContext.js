@@ -18,17 +18,10 @@ const ProductsContextProvider = ({ children }) => {
     }
   }, []);
 
-  // useEffect(() => {
-  //   if (!productId) return;
-  //   axios
-  //     .get(`http://localhost:8000/products/${productId}`)
-  //     .then((response) => {
-  //       setProduct(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error.message);
-  //     });
-  // }, [productId]);
+  useEffect(() => {
+    if (!productId) return;
+    setProduct(products.find((product) => product.id === productId));
+  });
 
   const handleFilteredSearch = (search) => {
     const filteredValue = products.filter((product) =>
