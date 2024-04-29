@@ -12,6 +12,10 @@ function OrderConfirmed() {
   const { cartProducts, setCartProducts } = useContext(CartContext);
   const handleShopAgain = () => {
     setCartProducts([]);
+    localStorage.setItem("cartProducts", JSON.stringify([]));
+    const newProducts = productList.map((product) => {
+      if (product.qty > 0) product.qty = 0;
+    });
     setProducts(productList);
     localStorage.setItem("products", JSON.stringify(productList));
   };
