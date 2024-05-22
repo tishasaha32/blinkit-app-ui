@@ -26,3 +26,27 @@
     background-color: #555; /* Color when hovering over the scrollbar */
   }
       
+  .responsiveMessage{
+    display: none;
+  }
+
+@media only screen and (max-width: 599px) {
+   .routes{
+    display: none;
+   } 
+    .responsiveMessage{
+      display: block;
+      position: absolute;
+      top: 0px;
+      width: 100vw;
+      height: 100vh;
+      background-color: white;
+      padding: 1rem;
+    }
+    
+    .message{
+      color: black;
+      text-align: center;
+    }
+}
+
